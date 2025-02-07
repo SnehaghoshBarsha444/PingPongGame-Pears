@@ -1,0 +1,29 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white antialiased;
+  }
+}
+
+@layer components {
+  .game-container {
+    @apply relative w-full max-w-4xl mx-auto;
+  }
+  
+  .game-canvas {
+    @apply border border-gray-800 rounded-lg shadow-xl;
+  }
+}
+
+@keyframes glow {
+  0%, 100% { filter: drop-shadow(0 0 2px rgba(255,255,255,0.7)); }
+  50% { filter: drop-shadow(0 0 5px rgba(255,255,255,0.9)); }
+}
+
+.paddle-glow {
+  animation: glow 2s ease-in-out infinite;
+}
